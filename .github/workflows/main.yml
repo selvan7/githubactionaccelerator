@@ -28,8 +28,3 @@ jobs:
       - name: Build APK
         run: ./gradlew assembleDebug  # Use assembleRelease if you want a release build
 
-      - name: Upload APK artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: app-debug  # You can change this to any desired name
-          path: app/build/outputs/apk/debug/app-debug.apk  # Path to the generated APK
