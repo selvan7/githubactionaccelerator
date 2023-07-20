@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
 					modifier = Modifier.fillMaxSize(),
 					color = MaterialTheme.colorScheme.background
 				) {
-					Greeting("Github Action Test7")
+					Greeting("Github Action Test8")
 				}
 			}
 		}
