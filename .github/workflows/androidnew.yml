@@ -25,12 +25,18 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
 
+    - name: Clean Build
+      run: ./gradlew clean
+      
+    - name: Debug Workspace
+      run: ls -R
+
     - name: Build and Generate APK
       run: ./gradlew assembleDebug
-
+      
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v2
       with:
         name: debug-apk
-        path: app/build/outputs/apk/debug/your_apk_name.apk
+        path: app/build/outputs/apk/debug/actionbuild.apk
 
