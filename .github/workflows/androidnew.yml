@@ -24,12 +24,13 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    
 
-    - name: Build APK
-      run: bash ./gradlew assembleDebug --stacktrace
-    - name: Upload APK
-      uses: actions/upload-artifact@v1
+    - name: Build and Generate APK
+      run: ./gradlew assembleDebug
+
+    - name: Upload APK Artifact
+      uses: actions/upload-artifact@v2
       with:
-        name: apk
-        path: app/build/outputs/apk/debug/app-debug.apk 
+        name: debug-apk
+        path: app/build/outputs/apk/debug/your_apk_name.apk
+
