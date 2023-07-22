@@ -17,7 +17,12 @@ jobs:
       - name: Build app
         run: ./gradlew build
       - name: Build APK
-        run: ./gradlew assembleDebug
+        run: ./gradlew assembleDebug 
+      - name: Upload APK Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+           name: debug-apk
+           path: app/build/outputs/apk/debug/actionbuild.apk
 
   test:
     runs-on: ubuntu-latest
