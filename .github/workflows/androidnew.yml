@@ -31,7 +31,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Setup Android SDK
-        uses: android/setup-android@v1
+        uses: android/setup-android@v2.0.2
       - name: Install dependencies
         run: ./gradlew installDebugDependencies
       - name: Run tests
