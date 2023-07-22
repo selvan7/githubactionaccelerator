@@ -16,6 +16,8 @@ jobs:
           java-version: 17
       - name: Build app
         run: ./gradlew build
+      - name: Build APK
+        run: ./gradlew assembleDebug
 
   test:
     runs-on: ubuntu-latest
