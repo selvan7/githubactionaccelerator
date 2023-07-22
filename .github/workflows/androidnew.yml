@@ -23,7 +23,21 @@ jobs:
         with:
            name: debug-apk
            path: app/build/outputs/apk/debug/actionbuild.apk
-
+           
+           
+  android-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Android SDK
+        uses: android/setup-android@v1
+      - name: Install dependencies
+        run: ./gradlew installDebugDependencies
+      - name: Run tests
+        run: ./gradlew testDebug
+        
+        
   test:
     runs-on: ubuntu-latest
     steps:
