@@ -23,8 +23,7 @@ jobs:
         with:
            name: debug-apk
            path: app/build/outputs/apk/debug/actionbuild.apk
-      - name: Install dependencies
-        run: ./gradlew installDebugDependencies
+
       - name: Run tests
         run: ./gradlew testDebug
         
